@@ -293,8 +293,8 @@ def train(
             ddp_find_unused_parameters=False if ddp else None,
             group_by_length=group_by_length,
             # report_to="wandb" if use_wandb else None,
-            report_to=None,
-            run_name=wandb_run_name if use_wandb else None,
+            report_to="none",
+            # run_name=wandb_run_name if use_wandb else None,
         ),
         data_collator=transformers.DataCollatorForSeq2Seq(
             tokenizer, pad_to_multiple_of=8, return_tensors="pt", padding=True
